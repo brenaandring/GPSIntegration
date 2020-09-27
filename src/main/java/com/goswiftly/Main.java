@@ -19,7 +19,8 @@ public class Main {
 
 	public static void processJsonHttpGPS(String inputFileUrl) {
 		final VehicleStates vehicleStates = new VehicleStates();
-		// TODO
+		HttpGPSModule httpGPSModule = new HttpGPSModule(inputFileUrl, vehicleStates);
+		httpGPSModule.ingestGPSPings();
 		vehicleStates.printVehicleLocations();
 	}
 }

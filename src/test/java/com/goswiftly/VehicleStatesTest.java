@@ -19,7 +19,5 @@ class VehicleStatesTest {
         List<Vehicle> expectedState = List.of(new Vehicle("my-tesla", 10.0, 20.0, 100));
 
         assertEquals(expectedState, latestVehicleStates);
-
-
     }
 }

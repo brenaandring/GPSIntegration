@@ -1,12 +1,17 @@
 package com.goswiftly;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import java.util.Objects;
 
 public class GPSPing {
 
+    @JsonAlias("id")
     private String vehicleId;
     private long timestamp;
+    @JsonAlias("lat")
     private double latitude;
+    @JsonAlias("lon")
     private double longitude;
 
     public GPSPing() {}
