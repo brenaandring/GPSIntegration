@@ -12,27 +12,24 @@ import java.util.List;
 
 public class HttpGPSModule {
 
-    private final String urlPath;
+    private final URL urlPath;
     private final VehicleStates vehicleStates;
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public HttpGPSModule(String urlPath, VehicleStates vehicleStates) {
+    public HttpGPSModule(URL urlPath, VehicleStates vehicleStates) {
         this.urlPath = urlPath;
         this.vehicleStates = vehicleStates;
-
     }
 
     public List<GPSPing> ingestGPSPings() {
         final File tempFile;
-
         try {
             tempFile = Files.createTempFile("gps-pings.json", "").toFile();
             tempFile.deleteOnExit();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        try (BufferedInputStream in = new BufferedInputStream(new URL(this.urlPath).openStream());
+        try (BufferedInputStream in = new BufferedInputStream(urlPath.openStream());
              FileOutputStream fileOutputStream = new FileOutputStream(tempFile)) {
             byte[] dataBuffer = new byte[1024];
             int bytesRead;

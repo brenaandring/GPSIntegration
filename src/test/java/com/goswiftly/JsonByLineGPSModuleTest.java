@@ -11,8 +11,7 @@ public class JsonByLineGPSModuleTest {
     @Test
     public void testIngestGPSPings() {
         VehicleStates vehicleStates = new VehicleStates();
-        JsonByLineGPSModule gpsModule = new JsonByLineGPSModule("/test_gps_data_json_by_line",
-                vehicleStates);
+        JsonByLineGPSModule gpsModule = new JsonByLineGPSModule("/test_gps_data_json_by_line", vehicleStates);
         List<GPSPing> actualGpsPings = gpsModule.ingestGPSPings();
 
         List<GPSPing> expectedGpsPings = Arrays.asList(
