@@ -17,15 +17,22 @@ public class VehicleStates {
 
     public void process(GPSPing gpsPing) {
         Vehicle vehicle = vehicles.getOrDefault(gpsPing.getVehicleId(), new Vehicle(gpsPing.getVehicleId()));
-        vehicle.setLatitude(gpsPing.getLatitude());
-        vehicle.setLongitude(gpsPing.getLongitude());
-        vehicles.put(gpsPing.getVehicleId(), vehicle);
+        if (vehicle.getLastUpdated() < gpsPing.getTimestamp()) {
+            vehicle.setLastUpdated(gpsPing.getTimestamp());
+            vehicle.setLatitude(gpsPing.getLatitude());
+            vehicle.setLongitude(gpsPing.getLongitude());
+            vehicles.put(gpsPing.getVehicleId(), vehicle);
+        }
     }
 
     public void printVehicleLocations() {
-        List<Vehicle> sortedList = vehicles.values().stream()
+        List<Vehicle> sortedList = getLatestVehicleStates();
+        sortedList.forEach(System.out::println);
+    }
+
+    protected List<Vehicle> getLatestVehicleStates() {
+        return vehicles.values().stream()
                 .sorted(Comparator.comparing(Vehicle::getVehicleId))
                 .collect(Collectors.toList());
-        sortedList.forEach(System.out::println);
     }
 }

@@ -7,9 +7,17 @@ public class Vehicle {
     private String vehicleId;
     private double latitude;
     private double longitude;
+    private long lastUpdated;
 
     public Vehicle(String vehicleId) {
         this.vehicleId = vehicleId;
+    }
+
+    public Vehicle(String vehicleId, double latitude, double longitude, long lastUpdated) {
+        this.vehicleId = vehicleId;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.lastUpdated = lastUpdated;
     }
 
     public String getVehicleId() {
@@ -39,6 +47,14 @@ public class Vehicle {
         return this;
     }
 
+    public long getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(long lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -46,20 +62,22 @@ public class Vehicle {
         Vehicle vehicle = (Vehicle) o;
         return Double.compare(vehicle.latitude, latitude) == 0 &&
                 Double.compare(vehicle.longitude, longitude) == 0 &&
-                Objects.equals(vehicleId, vehicle.vehicleId);
+                lastUpdated == vehicle.lastUpdated &&
+                vehicleId.equals(vehicle.vehicleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vehicleId, latitude, longitude);
+        return Objects.hash(vehicleId, latitude, longitude, lastUpdated);
     }
 
     @Override
     public String toString() {
-        return "Vehicle {" +
+        return "Vehicle{" +
                 "vehicleId='" + vehicleId + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
+                ", lastUpdated=" + lastUpdated +
                 '}';
     }
 }

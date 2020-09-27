@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
  */
 public class JsonByLineGPSModule {
 
-    private String dataPath;
-    private VehicleStates vehicleStates;
+    private final String dataPath;
+    private final VehicleStates vehicleStates;
     private final ObjectMapper mapper = new ObjectMapper();
 
     public JsonByLineGPSModule(String dataPath, VehicleStates vehicleStates) {
@@ -39,7 +39,7 @@ public class JsonByLineGPSModule {
             throw new RuntimeException("Error while reading GPS ping file", e);
         }
 
-        gpsPings.forEach(ping -> vehicleStates.process(ping));
+        gpsPings.forEach(vehicleStates::process);
         return gpsPings;
     }
 }
