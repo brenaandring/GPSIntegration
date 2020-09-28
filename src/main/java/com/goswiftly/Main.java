@@ -28,8 +28,8 @@ public class Main {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-        HttpGPSModule httpGPSModule = new HttpGPSModule(urlPath, vehicleStates);
-        httpGPSModule.ingestGPSPings();
+        UrlGPSModule urlGPSModule = new UrlGPSModule(urlPath, vehicleStates);
+        urlGPSModule.ingestGPSPings();
         vehicleStates.printVehicleLocations();
     }
 }

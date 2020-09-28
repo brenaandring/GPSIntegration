@@ -7,15 +7,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class HttpGPSModuleTest {
+public class UrlGPSModuleTest {
 
     @Test
-    void ingestGPSPings() {
+    public void testIngestGPSPings() {
         URL url = getClass().getClassLoader().getResource("gps_data_http_json");
         VehicleStates vehicleStates = new VehicleStates();
-        HttpGPSModule httpGPSModule = new HttpGPSModule(url, vehicleStates);
+        UrlGPSModule urlGPSModule = new UrlGPSModule(url, vehicleStates);
 
-        List<GPSPing> actualGpsPings = httpGPSModule.ingestGPSPings();
+        List<GPSPing> actualGpsPings = urlGPSModule.ingestGPSPings();
 
         List<GPSPing> expectedGpsPings = List.of(
                 new GPSPing("123", 1600877135, 100.5, 500.6),

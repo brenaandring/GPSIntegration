@@ -10,13 +10,13 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.util.List;
 
-public class HttpGPSModule {
+public class UrlGPSModule {
 
     private final URL urlPath;
     private final VehicleStates vehicleStates;
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public HttpGPSModule(URL urlPath, VehicleStates vehicleStates) {
+    public UrlGPSModule(URL urlPath, VehicleStates vehicleStates) {
         this.urlPath = urlPath;
         this.vehicleStates = vehicleStates;
     }

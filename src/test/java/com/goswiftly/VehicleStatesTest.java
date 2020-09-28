@@ -6,10 +6,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class VehicleStatesTest {
+public class VehicleStatesTest {
 
     @Test
-    void processUpdatesVehicleState() {
+    public void testProcessUpdatesVehicleState() {
         VehicleStates vehicleStates = new VehicleStates();
         GPSPing gpsPing = new GPSPing("my-tesla", 100, 10.0, 20.0);
 
@@ -22,7 +22,7 @@ class VehicleStatesTest {
     }
 
     @Test
-    void processDiscardsOldGPSPing() {
+    public void testProcessDiscardsOldGPSPing() {
         VehicleStates vehicleStates = new VehicleStates();
         GPSPing gpsPingNew = new GPSPing("mazda", 1701220, 10.0, 20.0);
         GPSPing gpsPingOld = new GPSPing("mazda", 1701100, 5.0, 10.0);
@@ -37,7 +37,7 @@ class VehicleStatesTest {
     }
 
     @Test
-    void processMultipleGPSPings() {
+    public void testProcessMultipleGPSPings() {
         VehicleStates vehicleStates = new VehicleStates();
         GPSPing gpsPing1 = new GPSPing("bus1", 1205967, 15.0, 20.0);
         GPSPing gpsPing2 = new GPSPing("bus2", 1302954, 5.0, 20.0);
