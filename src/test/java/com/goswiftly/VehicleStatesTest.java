@@ -52,7 +52,6 @@ class VehicleStatesTest {
         );
 
         assertEquals(expectedState, latestVehicleStates);
-
     }
 
 }

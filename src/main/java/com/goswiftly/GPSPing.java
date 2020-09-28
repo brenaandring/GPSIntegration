@@ -14,7 +14,8 @@ public class GPSPing {
     @JsonAlias("lon")
     private double longitude;
 
-    public GPSPing() {}
+    public GPSPing() {
+    }
 
     public GPSPing(String vehicleId, long timestamp, double latitude, double longitude) {
         this.vehicleId = vehicleId;

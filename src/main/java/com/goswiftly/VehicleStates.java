@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/** Maintains a mapping of vehicle ID to vehicle location and can print out vehicle locations **/
+/**
+ * Maintains a mapping of vehicle ID to vehicle location and can print out vehicle locations
+ **/
 public class VehicleStates {
 
     private Map<String, Vehicle> vehicles = new HashMap<>();

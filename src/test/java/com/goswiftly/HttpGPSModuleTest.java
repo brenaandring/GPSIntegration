@@ -26,8 +26,8 @@ class HttpGPSModuleTest {
         assertEquals(expectedGpsPings, actualGpsPings);
 
         List<Vehicle> expectedVehicleStates = List.of(
-                new Vehicle("123",23.23232, 47.47475, 1600877200),
-                new Vehicle("asd",-100.0, -200.123, 1600877157)
+                new Vehicle("123", 23.23232, 47.47475, 1600877200),
+                new Vehicle("asd", -100.0, -200.123, 1600877157)
         );
 
         assertEquals(expectedVehicleStates, vehicleStates.getLatestVehicleStates());

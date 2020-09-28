@@ -22,8 +22,8 @@ public class JsonByLineGPSModuleTest {
         Assertions.assertEquals(expectedGpsPings, actualGpsPings);
 
         List<Vehicle> expectedStates = List.of(
-                new Vehicle("0102",37.79001,   -122.40049, 1600877200),
-                new Vehicle("VEH_1425",37.78849,   -122.40248, 1600877235)
+                new Vehicle("0102", 37.79001, -122.40049, 1600877200),
+                new Vehicle("VEH_1425", 37.78849, -122.40248, 1600877235)
         );
         Assertions.assertEquals(expectedStates, vehicleStates.getLatestVehicleStates());
     }
