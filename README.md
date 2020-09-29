@@ -9,6 +9,7 @@ variety of GPS feeds to pull this data depending on the equipment on the transit
 We’ve received a report from a customer using the ​JsonByLineGPSModule​ that their vehicles are occasionally jumping 
 around and going backwards on our live map. In fact, the final printed location of vehicles in our example is not 
 correct based on the input file.
+
 ##### Requirement:
 Figure out what the issue is and amend the code to handle it. There could be multiple solutions so please include a 
 quick note in the README on the approach you chose.
@@ -17,6 +18,7 @@ quick note in the README on the approach you chose.
 The same transit agency has decided to provide an alternate GPS feed hosted at an HTTP endpoint. The M​ ain.java​ class 
 contains a stub method for us to integrate their feed by ingesting the file at the included URL. The data format is 
 not exactly the same but the data is, so we should ultimately see the same results as in problem 1.
+
 #####Requirement:
 Build a new GPS module to pull GPS data from the provided HTTP endpoint, process it, and print the final vehicle locations.
 
