@@ -1,7 +1,7 @@
 # GPS Feed Integration
 
 ## _Background_
-All of Swiftly’s products depend on getting accurate GPS data from vehicles. They have to integrate with a 
+All of the company's products depend on getting accurate GPS data from vehicles. They have to integrate with a 
 variety of GPS feeds to pull this data depending on the equipment on the transit agency’s vehicles. 
 
 ### _Problem Statements and Requirements_
